@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BeaconTransmitter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="configured_transmitters">Configured Transmitters</string>
+    <string name="ibeaconsample">iBeaconSample</string>
+    <string name="ibeacon">iBeacon</string>
+    <string name="beacon_type">Beacon Type</string>
+    <string name="basicUUid_ibeacon">2F34454-Cf6D-4A0F-ADF2-F4911BA9FFA6</string>
+    <string name="major">Major</string>
+    <string name="measured_power">Measured power</string>
+    <string name="beacon_type_ibeacon">Beacon Type : iBeacon</string>
+    <string name="beacon_type_altBeacon">Beacon Type : Alt Beacon</string>
+</resources>

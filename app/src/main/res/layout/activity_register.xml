@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.register.RegisterActivity">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:drawableStart="@drawable/ic_email_icon"
+                android:drawablePadding="6dp"
+                android:layout_gravity="center"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="28dp"
+                android:ems="10"
+                android:drawablePadding="6dp"
+                android:drawableStart="@drawable/ic_person_icon"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/edit_empId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:drawablePadding="6dp"
+                android:drawableStart="@drawable/ic_employee_id_icon"
+                android:layout_gravity="center"
+                android:hint="Employee Id"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <Spinner
+                android:id="@+id/edit_bloodGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="32dp"
+                android:drawablePadding="6dp"
+                android:padding="10dp"
+                android:drawableStart="@drawable/ic_bloodtype_24"
+                android:layout_gravity="center"
+
+                tools:hint="Blood Group" />
+
+            <EditText
+                android:id="@+id/edit_ph1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:drawablePadding="6dp"
+                android:drawableStart="@drawable/ic_baseline_phone_24"
+                android:layout_gravity="center"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/edit_ph2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:layout_gravity="center"
+                android:hint="Family Contact Number"
+                android:drawablePadding="6dp"
+                android:drawableStart="@drawable/ic_baseline_phone_24"
+                android:inputType="phone"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/edit_ph3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:drawablePadding="6dp"
+                android:drawableStart="@drawable/ic_baseline_phone_24"
+                android:hint="Family Contact Number"
+                android:inputType="phone"
+                android:minHeight="48dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="20dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:text="Submit" />
+        </LinearLayout>
+    </ScrollView>
+</layout>
