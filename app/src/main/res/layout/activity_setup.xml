@@ -49,15 +49,28 @@
                         android:text="@string/beacon_type_ibeacon"
                         android:textColor="@color/black" />
 
-                    <TextView
-                        android:id="@+id/edit_major_iBeacon"
+                    <EditText
+                        android:id="@+id/edit_major"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:inputType="number"
+                        android:hint="Major : 3 "
+                        />
+
+                    <EditText
+                        android:id="@+id/edit_minor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:textSize="22sp"
-                        tools:hint="Major "
+                        android:inputType="number"
 
-                        android:textColor="@color/black" />
+                        android:hint="Minor : 3"
+                        android:textColor="@color/black"
+                         />
 
 
 

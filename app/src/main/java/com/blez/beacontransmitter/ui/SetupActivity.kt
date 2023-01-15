@@ -28,6 +28,7 @@ import org.altbeacon.beacon.Beacon
 import org.altbeacon.beacon.BeaconParser
 import org.altbeacon.beacon.BeaconTransmitter
 import java.util.*
+import kotlin.collections.ArrayList
 
 class SetupActivity : AppCompatActivity(){
 
@@ -72,7 +73,7 @@ class SetupActivity : AppCompatActivity(){
          var intentService = Intent(this@SetupActivity,MyService::class.java)
         bindService(intentService,beaconSericeConnection, BIND_AUTO_CREATE)
         credentialManager = CredentialManager(this)
-        binding.editMajorIBeacon.text = "Id : ${credentialManager.getUUID()}"
+
 
         Log.e("TAG","onCreate is called")
         Log.e("TAG","onCreate ble state : ${beacon__service?.beaconTransmitter.toString()} ")
@@ -88,14 +89,14 @@ class SetupActivity : AppCompatActivity(){
               binding.StartIBeaconBTN.setOnClickListener {
                   hideKeyboard(it)
                   askPermission()
-                  val majorUUID = credentialManager.getUUID()!!
-                  val major = majorUUID
-                  val minor = major
 
-                  if(major.isEmpty() || minor.isEmpty()){
-                      Toast.makeText(this, "Please Enter The Field Correctly!!", Toast.LENGTH_LONG).show()
-                  }
-                 else if (!isBluetoothEnabled())
+                  val major_value =binding.editMajor.text.toString()
+                  val minor_value = binding.editMinor.text.toString()
+                  val measured = "-59"
+                  val major = if (major_value.isEmpty()) "3" else major_value
+                  val minor = if(minor_value.isEmpty()) "3" else minor_value
+
+                 if (!isBluetoothEnabled())
                   {
                       Toast.makeText(this, "Please Enable Bluetooth", Toast.LENGTH_LONG).show()
                   }
@@ -103,19 +104,21 @@ class SetupActivity : AppCompatActivity(){
                       Toast.makeText(this, "Value must be less than or equal to 65535", Toast.LENGTH_LONG).show()
                   }
                   else{
+                   val  measured_value = measured.toInt()
 
                       beacon__service?.beacon = Beacon.Builder()
 
                           .setId1("2f234454-cf6d-4a0f-adf2-f4911ba9ffa6")
                           .setId2(major)
                           .setId3(minor)
-                          .setManufacturer(0x0118)
+                          .setManufacturer(0x004C)
                           .setTxPower(-59)
-                          .setDataFields(Arrays.asList(0L))
+                          /*.setDataFields(arrayListOf(0L))*/
                           .build()
 
                       beacon__service?.beaconParser = BeaconParser()
                           .setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24")
+               /*           .setBeaconLayout("m:2-3=beac,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25")*/
                       beacon__service?.beaconTransmitter = BeaconTransmitter(applicationContext,  beacon__service?.beaconParser)
 
 
