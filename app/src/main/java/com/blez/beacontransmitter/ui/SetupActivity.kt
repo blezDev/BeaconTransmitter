@@ -90,8 +90,8 @@ class SetupActivity : AppCompatActivity(){
                   hideKeyboard(it)
                   askPermission()
 
-                  val major_value =binding.editMajor.text.toString()
-                  val minor_value = binding.editMinor.text.toString()
+                  val major_value = "3"
+                  val minor_value = "3"
                   val measured = "-59"
                   val major = if (major_value.isEmpty()) "3" else major_value
                   val minor = if(minor_value.isEmpty()) "3" else minor_value

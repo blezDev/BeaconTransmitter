@@ -55,6 +55,7 @@ class RegisterActivity : AppCompatActivity() {
                   200->{
                       Toast.makeText(this@RegisterActivity, "Register Success", Toast.LENGTH_SHORT).show()
                       credentialManager.saveUUID(response.body()?.serial.toString())
+                      credentialManager.saveName(name)
                       val intent = Intent(this@RegisterActivity,SetupActivity::class.java)
                       startActivity(intent)
                       finish()

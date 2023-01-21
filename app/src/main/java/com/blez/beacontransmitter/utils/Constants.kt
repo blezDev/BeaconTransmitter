@@ -5,6 +5,7 @@ object Constants {
     const val PREFS_TOKEN_FILE = "PREFS_TOKEN_FILE"
     const val USER_UUID = "USER_UUID"
     const val USER_EMAIL = "USER_EMAIL"
+    const val USER_NAME = "USER_NAME"
     const val USER_MAJOR_MINOR = "USER_MAJOR_MINOR"
 
     const val NOTIFICATION_CHANNEL_ID = "beacon_transmitting"
